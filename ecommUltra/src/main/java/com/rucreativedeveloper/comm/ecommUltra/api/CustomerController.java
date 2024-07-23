@@ -10,20 +10,25 @@ public class CustomerController {
 
     @PostMapping
     public String create(@RequestBody RequestCustomerDto dto){return dto.getAddress();}
+
     @GetMapping("/list")
+
     public String findAll(
             @RequestParam String searchText,
             @RequestParam int page,
             @RequestParam int pageSize
     ){return "findAll()";}
+
     @GetMapping("/{id}")
     public String getById(
             @PathVariable String id
     ){return "getById()";}
+
     @PutMapping
     public String update(){return "update()";}
-    @DeleteMapping
-    public String delete(){return "delete()";}
+
+    @DeleteMapping("/{Id}")
+    public String delete(@PathVariable String Id){return "delete()";}
 
     //localhost:3307/api/v1/customers/
 
